@@ -2,7 +2,7 @@ console.log("notes")
 
 const yargs = require('yargs')
 
-// const notes = require('./notes1.js')
+const {addNotes,readNotes,removeNotes,updateNotes, listNotes} = require('./notes1.js')
 
 
 // console.log(process.argv) //helps with getting the values from cli as arguments
@@ -30,8 +30,7 @@ yargs.command({
         }
     },
     handler: function(argv){
-        console.log("Title -> ", argv.title)
-        console.log("Body -> ", argv.body)
+        addNotes(argv.title,argv.body)
     }
 })
 
