@@ -17,15 +17,15 @@ app.get('/getWeather',(req,res)=>{
     let addr = req.query.address
     console.log("Address: ", addr)
 
-    lonLatData(addr,(error,{latitude,longitude})=>{
+    lonLatData(addr,(error,{latitude,longitude} = {})=>{
         // console.log(data)
         if (error){
-            return console.log(error)
+            return res.send(error)
         }
         console.log(latitude)
         console.log(longitude)
     
-        forecast(latitude,longitude,({phrase,temperature,feelLikeTemperature})=>{
+        forecast(latitude,longitude,({phrase,temperature,feelLikeTemperature} = {})=>{
             // console.log(data)
             const weatherData = {
                 phrase,
