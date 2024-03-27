@@ -15,4 +15,3 @@ MongoClient.connect(connectionURL,{
 
     console.log("Mongodb connected at port 27017")
 })
-f
